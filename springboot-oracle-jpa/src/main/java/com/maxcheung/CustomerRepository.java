@@ -1,4 +1,4 @@
-package hello;
+package com.maxcheung;
 
 import java.util.List;
 
