@@ -26,15 +26,11 @@ public class CustomerReferenceGeneratorImpl  implements CustomerReferenceGenerat
 
 	@Override
 	public long generateCRN() throws CheckDigitException  {
-		long empId = incrementer.nextLongValue();
-		String checkdigit = "";
-		checkdigit = calculateCheckDigit("" + empId);
-		return Long.parseLong(empId + checkdigit);
+		return calculateCheckDigit(incrementer.nextLongValue());
 	}
-
 	
-	private String calculateCheckDigit(String code) throws CheckDigitException  {
-		return LuhnCheckDigit.LUHN_CHECK_DIGIT.calculate(code);
+	private long calculateCheckDigit(Long code) throws CheckDigitException  {
+		return Long.parseLong(code + LuhnCheckDigit.LUHN_CHECK_DIGIT.calculate(String.valueOf(code)));
 	}
 
 }
