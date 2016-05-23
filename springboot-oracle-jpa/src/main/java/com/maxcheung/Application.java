@@ -26,7 +26,7 @@ public class Application {
 		return (args) -> {
 			
 			
-			int nextReference = customerReferenceGenerator.nextIntValue();
+			Long nextReference = customerReferenceGenerator.generateCRN();
 			log.info("Next Customer Reference : " + nextReference);
 			// save a couple of customers
 			repository.save(new Customer("Jack", "Bauer"));

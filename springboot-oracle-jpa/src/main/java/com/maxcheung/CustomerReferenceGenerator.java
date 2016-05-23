@@ -1,21 +1,11 @@
 package com.maxcheung;
 
-import javax.sql.DataSource;
+import org.apache.commons.validator.routines.checkdigit.CheckDigitException;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.jdbc.support.incrementer.OracleSequenceMaxValueIncrementer;
-import org.springframework.stereotype.Component;
+public interface CustomerReferenceGenerator   {
 
 
-@Component
-public class CustomerReferenceGenerator extends OracleSequenceMaxValueIncrementer  {
+	public long generateCRN() throws CheckDigitException;
 
-	private static final String CUSTOMER_CRN_SEQ = "CUSTOMER_CRN_SEQ";
-
-	@Autowired
-	public CustomerReferenceGenerator(DataSource dataSource) {
-		super(dataSource, CUSTOMER_CRN_SEQ);
-	}
-
-
+	
 }
