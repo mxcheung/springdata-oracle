@@ -1,0 +1,143 @@
+{
+   "addressCodeList":[
+      {
+         "code":"POS",
+         "label":"Postal"
+      },
+      {
+         "code":"RES",
+         "label":"Residential"
+      }
+   ],
+   "countryCodeList":[
+      {
+         "code":"AU",
+         "label":"Australia"
+      },
+      {
+         "code":"NZ",
+         "label":"New Zealand"
+      }
+   ],
+   "suffixList":[
+      {
+         "code":"II",
+         "label":"III - Third"
+      },
+      {
+         "code":"KBE",
+         "label":"KBE - Knight Commander of the Order of the British Empire"
+      }
+   ],
+   "stateList":[
+
+   ],
+   "genderList":[
+      {
+         "code":"0.0",
+         "label":"Unspecified"
+      },
+      {
+         "code":"1.0",
+         "label":"Male"
+      },
+      {
+         "code":"2.0",
+         "label":"Female"
+      },
+      {
+         "code":"3.0",
+         "label":"Intersex or Indeterminate"
+      }
+   ],
+   "occupationList":[
+      {
+         "code":"ABA1",
+         "label":"Abattoirs - Butcher / Boner"
+      },
+      {
+         "code":"ABA2",
+         "label":"Abattoirs - Inspector"
+      },
+      {
+         "code":"ACT12",
+         "label":"Actuary - Unqualified"
+      },
+      {
+         "code":"ACU13",
+         "label":"Acupuncturist - Qualified   - Member of Acupuncture Assoc. Of Australia"
+      },
+      {
+         "code":"ADV17",
+         "label":"Advertising - Executive - Other"
+      },
+      {
+         "code":"AER18",
+         "label":"Aerobics Instructor - Full Time, Well Established, Minimum 3 years"
+      },
+      {
+         "code":"AER19",
+         "label":"Aeronautical Engineer - Office and consultation duties"
+      },
+      {
+         "code":"AGE20",
+         "label":"Agent - Customs (Clerical)"
+      },
+      {
+         "code":"BUI138",
+         "label":"Building & Construction - Builder - Licensed - Administration and sales only"
+      },
+      {
+         "code":"BUI139",
+         "label":"Building & Construction - Carpenter - Licensed"
+      },
+      {
+         "code":"BUI140",
+         "label":"Building & Construction - Ceiling Fixer - Licensed"
+      },
+      {
+         "code":"BUI141",
+         "label":"Building & Construction - Cement Renderer - Licensed"
+      },
+      {
+         "code":"WIN31",
+         "label":"Window Tinter"
+      },
+      {
+         "code":"WIN32",
+         "label":"Windscreen Fitter"
+      },
+      {
+         "code":"WIN33",
+         "label":"Wine Maker"
+      },
+      {
+         "code":"WIN34",
+         "label":"Wine Merchant (Vintner) - Sales & Light Manual"
+      },
+      {
+         "code":"WOO35",
+         "label":"Wool Classer - City"
+      },
+      {
+         "code":"WOO36",
+         "label":"Wool Classer - Country"
+      },
+      {
+         "code":"WRE37",
+         "label":"Wrecker - Building"
+      },
+      {
+         "code":"WRE38",
+         "label":"Wrecker - Motor"
+      },
+      {
+         "code":"ZOO39",
+         "label":"Zoo Worker (Wildlife Attendant) - Other - Unqualified"
+      },
+      {
+         "code":"ZOO40",
+         "label":"Zoo Worker (Wildlife Attendant) - With Tertiary Qualified"
+      }
+   ]
+}
