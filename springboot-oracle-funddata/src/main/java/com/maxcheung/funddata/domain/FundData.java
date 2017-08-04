@@ -1,4 +1,4 @@
-package com.maxcheung.funddata;
+package com.maxcheung.funddata.domain;
 
 import static javax.persistence.GenerationType.SEQUENCE;
 
@@ -34,7 +34,7 @@ public class FundData implements Comparable<FundData> {
     
 
 
-    protected FundData() {}
+    public FundData() {}
 
 	public long getId() {
 		return id;
