@@ -8,6 +8,7 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponentsBuilder;
 
 import com.maxcheung.funddata.domain.UserData;
+import com.maxcheung.funddata.domain.UsersDTO;
 import com.maxcheung.funddata.service.UserService;
 
 
@@ -29,7 +31,6 @@ public class FundDataController {
  
      
     //-------------------Retrieve All Users--------------------------------------------------------
-     
     @RequestMapping(value = "/user/", method = RequestMethod.GET)
     public ResponseEntity<List<UserData>> listAllUsers() {
         List<UserData> users = userService.findAllUsers();
@@ -39,6 +40,17 @@ public class FundDataController {
         return new ResponseEntity<List<UserData>>(users, HttpStatus.OK);
     }
  
+    //-------------------Retrieve All Users--------------------------------------------------------
+    @RequestMapping(value = "/userDTO/", method = RequestMethod.GET)
+    public ResponseEntity<UsersDTO> listAllUsersDTO() {
+    	UsersDTO usersDTO = new UsersDTO();
+        List<UserData> users = userService.findAllUsers();
+        usersDTO.setUsers(users);
+        if(users.isEmpty()){
+            return new ResponseEntity<UsersDTO>(HttpStatus.NO_CONTENT);//You many decide to return HttpStatus.NOT_FOUND
+        }
+        return new ResponseEntity<UsersDTO>(usersDTO, HttpStatus.OK);
+    }
  
     //-------------------Retrieve Single User--------------------------------------------------------
      
