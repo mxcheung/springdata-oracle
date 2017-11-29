@@ -1,6 +1,5 @@
 package au.com.lonsec.service.company.tree;
 
-
 import static org.junit.Assert.assertEquals;
 
 import java.io.IOException;
@@ -31,7 +30,8 @@ public class TreeTest {
 
     @Test
     public void shouldSerialize() throws JsonProcessingException {
-        Tree tree = new Tree("Root", getChildren("Root"));
+   //     Tree tree = new Tree("Root", getChildren("Root"));
+        Tree tree = new Tree("AEQ", getChildren("AEQ",getLookupList()));
 
         String json = this.mapper.writeValueAsString(tree);
         assertEquals(JSON_STRING, json);
@@ -44,11 +44,11 @@ public class TreeTest {
         assertEquals(2, tree.getChildren().size());
     }
 
-    List<Tree> getChildren(String parentCode) {
+    List<Tree> getChildren(String parentCode, List<LookupValue> lookupdata) {
         List<Tree> children = new ArrayList<Tree>();
         List<LookupValue> lookups = getLookupList(parentCode, getLookupList());
         for (LookupValue lookup : lookups) {
-            Tree child1 = new Tree(lookup.getKey(), getChildren(lookup.getKey()));
+            Tree child1 = new Tree(lookup.getKey(), getChildren(lookup.getKey(), lookupdata));
             children.add(child1);
 
         }
@@ -58,7 +58,7 @@ public class TreeTest {
 
     private List<LookupValue> getLookupList() {
         List<LookupValue> lookups = new ArrayList<LookupValue>();
-        lookups.add(getLookupValue("Root", "Root", null));
+     //   lookups.add(getLookupValue("Root", "Root", null));
         lookups.add(getLookupValue("AEQ", "Australia Equities", "Root"));
         lookups.add(getLookupValue("AEQ:ALP", "AEQ:ALP", "AEQ"));
         lookups.add(getLookupValue("AEQ:ASC", "AEQ:ASC", "AEQ"));
@@ -66,6 +66,7 @@ public class TreeTest {
         lookups.add(getLookupValue("PI", "Property", "Root"));
         return lookups;
     }
+
 
     private List<LookupValue> getLookupList(String parentCode, List<LookupValue> lookups) {
         List<LookupValue> filteredlookups = new ArrayList<LookupValue>();
